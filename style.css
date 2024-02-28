@@ -1,5 +1,16 @@
-body{
-    background-color: black;
+body {
+    background: #000000
 }
-e
 
+h1 {
+    texte-align: center
+}
+
+p {
+    text-align: center;
+}
+
+strong {
+    color: #ff0000;
+
+}
