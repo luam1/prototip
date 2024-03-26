@@ -3,73 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos</title>
+    <title>Botões Funcionais</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f2f2f2;
         }
-        button {
-            padding: 5px 10px;
-            margin: 5px;
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Lista de Contatos</h1>
-    <button onclick="addContact()">Adicionar Contato</button>
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody id="contactList">
-            <!-- Aqui os contatos serão inseridos dinamicamente -->
-        </tbody>
-    </table>
 
-    <script>
-        function addContact() {
-            // Aqui você pode adicionar código para abrir um formulário de adição de contato
-            // Por simplicidade, vou apenas adicionar uma linha na tabela
-            var contactList = document.getElementById("contactList");
-            var newRow = document.createElement("tr");
-            newRow.innerHTML = `
-                <td>Novo Contato</td>
-                <td>example@example.com</td>
-                <td>(00) 00000-0000</td>
-                <td>
-                    <button onclick="editContact(this)">Editar</button>
-                    <button onclick="deleteContact(this)">Excluir</button>
-                </td>
-            `;
-            contactList.appendChild(newRow);
-        }
+<div class="container">
+    <button class="button" onclick="alert('Botão 1 clicado')">Botão 1</button>
+    <button class="button" onclick="alert('Botão 2 clicado')">Botão 2</button>
+    <button class="button" onclick="alert('Botão 3 clicado')">Botão 3</button>
+    <button class="button" onclick="alert('Botão 4 clicado')">Botão 4</button>
+    <button class="button" onclick="alert('Botão 5 clicado')">Botão 5</button>
+</div>
 
-        function editContact(button) {
-            // Aqui você pode adicionar código para abrir um formulário de edição de contato
-            // Por simplicidade, vou apenas mudar o texto do contato
-            var row = button.parentNode.parentNode;
-            var cells = row.getElementsByTagName("td");
-            cells[0].textContent = "Contato Editado";
-        }
-
-        function deleteContact(button) {
-            var row = button.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-        }
-    </script>
 </body>
 </html>
