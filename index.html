@@ -1,51 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botões Funcionais</title>
+    <title>Meu Site</title>
     <style>
+        /* Estilos CSS podem ser adicionados aqui */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
         }
-        .container {
-            max-width: 400px;
-            margin: 20px auto;
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+        section {
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .button {
-            display: block;
-            width: 100%;
+        footer {
+            background-color: #333;
+            color: #fff;
             text-align: center;
             padding: 10px;
-            margin-bottom: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #0056b3;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <button class="button" onclick="alert('Botão 1 clicado')">Botão 1</button>
-    <button class="button" onclick="alert('Botão 2 clicado')">Botão 2</button>
-    <button class="button" onclick="alert('Botão 3 clicado')">Botão 3</button>
-    <button class="button" onclick="alert('Botão 4 clicado')">Botão 4</button>
-    <button class="button" onclick="alert('Botão 5 clicado')">Botão 5</button>
-</div>
-
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+    <nav>
+        <a href="#">Página Inicial</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+    <section>
+        <h2>Página Inicial</h2>
+        <p>Bem-vindo ao meu site! Este é um exemplo básico de um site HTML.</p>
+    </section>
+    <footer>
+        &copy; 2024 Meu Site
+    </footer>
 </body>
 </html>
