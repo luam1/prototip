@@ -3,107 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
+    <title>Contatos</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #666;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0 10px;
-        }
-        nav a:hover {
-            background-color: #999;
-        }
-        section {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
+        table {
             width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Meu Site</h1>
-    </header>
-    <nav>
-        <a href="#">Página Inicial</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
-    </nav>
-    <section>
-        <h2>Bem-vindo ao meu site!</h2>
-        <p>Este é um exemplo básico de um site HTML.</p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
-    </footer>
+    <h1>Lista de Contatos</h1>
+    <button onclick="addContact()">Adicionar Contato</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="contactList">
+            <!-- Aqui os contatos serão inseridos dinamicamente -->
+        </tbody>
+    </table>
 
-<div class="container">
-        <div class="column">
-            <a href="#" class="button"><img src="" alt="" heigt="" whindt=""></a>
-            <a href="#" class="button">Botão 2</a>
-            <a href="#" class="button">Botão 3</a>
-        </div>
-        <div class="column">
-            <a href="#" class="button">Botão 4</a>
-            <a href="#" class="button">Botão 5</a>
-            <a href="#" class="button">Botão 6</a>
-        </div>
-        <div class="column">
-            <a href="#" class="button">Botão 7</a>
-            <a href="#" class="button">Botão 8</a>
-            <a href="#" class="button">Botão 9</a>
-        </div>
-    </div>
+    <script>
+        function addContact() {
+            // Aqui você pode adicionar código para abrir um formulário de adição de contato
+            // Por simplicidade, vou apenas adicionar uma linha na tabela
+            var contactList = document.getElementById("contactList");
+            var newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td>Novo Contato</td>
+                <td>example@example.com</td>
+                <td>(00) 00000-0000</td>
+                <td>
+                    <button onclick="editContact(this)">Editar</button>
+                    <button onclick="deleteContact(this)">Excluir</button>
+                </td>
+            `;
+            contactList.appendChild(newRow);
+        }
 
+        function editContact(button) {
+            // Aqui você pode adicionar código para abrir um formulário de edição de contato
+            // Por simplicidade, vou apenas mudar o texto do contato
+            var row = button.parentNode.parentNode;
+            var cells = row.getElementsByTagName("td");
+            cells[0].textContent = "Contato Editado";
+        }
+
+        function deleteContact(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
